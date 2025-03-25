@@ -1,6 +1,6 @@
 import { useState, useCallback, useEffect, useRef } from 'react'
 
-function App() {
+function PasswordGenerat() {
   const[length, setLength] = useState(10);
   const[number, setNumber] = useState(false)
   const[special, setSpecial] = useState(false)
@@ -55,13 +55,13 @@ function App() {
         {/* inputs for the password generator */}
         <div id="inputs">
           <input type="range" min="4" max="16" id='ran' name='ran' value={length} onChange={(e) => {setLength(e.target.value)}} className='mr-1 cursor-grab'/>
-          <label for="ran" className='cursor-pointer'>Length : {length}</label>
+          <label htmlFor="ran" className='cursor-pointer'>Length : {length}</label>
           
           <input type="checkbox"  name='number' id='number' value={number} onChange={() => {setNumber((prev)=>!prev) ;}} className='m-10 mr-1 cursor-pointer' />
-          <label for='number' className='cursor-pointer' >Include Numbers</label>
+          <label htmlFor='number' className='cursor-pointer' >Include Numbers</label>
 
           <input type="checkbox" name='special' id='special' value={special}  onChange={() => {setSpecial((prev)=>!prev) ;}} className='ml-10 mr-1 cursor-pointer'/>
-          <label for='special' className='cursor-pointer'> Include Special Charecters</label>
+          <label htmlFor='special' className='cursor-pointer'> Include Special Charecters</label>
 
           {/* Using the button to call the passwordGenerator function */}
 
@@ -73,4 +73,4 @@ function App() {
   )
 }
 
-export default App
+export default PasswordGenerat
